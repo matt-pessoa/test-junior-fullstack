@@ -1,10 +1,10 @@
-import File from '../models/file.model';
+import UserModel from '../models/file.model';
 
 export default class UsersService {
-  constructor() {}
+  constructor(private userModel = new UserModel()) {}
 
   public async getData() {
-    const data = await File.find();
+    const data = await this.userModel.getData();
 
     return data;
   }

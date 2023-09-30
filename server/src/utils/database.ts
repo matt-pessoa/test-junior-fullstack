@@ -1,9 +1,21 @@
 import sqlite3 from 'sqlite3';
-import { open } from 'sqlite';
 
-export default async function databaseConnection() {
-  return open({
-    filename: './database.db',
-    driver: sqlite3.Database,
+export const openConnection = () => {
+  let db = new sqlite3.Database('./database.db');
+  return db;
+};
+
+export const dbQuery = (query: string, params?: any[]) => {
+  let db = openConnection();
+  return new Promise<any[]>((resolve, reject) => {
+    db.all(query, params, (err, rows) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(rows);
+      }
+    });
+  }).finally(() => {
+    db.close();
   });
-}
+};

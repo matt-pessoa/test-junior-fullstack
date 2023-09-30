@@ -1,8 +1,17 @@
-// import { InterfaceData } from '../interfaces/dataInterface';
+import { dbQuery } from '../utils/database';
 
-// const FileSchema = new mongoose.Schema<InterfaceData>({
-//   name: { type: String, required: true },
-//   city: { type: String, required: true },
-//   country: { type: String, required: true },
-//   favorite_sport: { type: String, required: true },
-// });
+export type File = {
+  name: string;
+  city: string;
+  country: string;
+  favorite_sport: string;
+};
+
+export default class UserModel {
+  constructor() {}
+
+  public async getData() {
+    const response = await dbQuery(`SELECT * from file`);
+    return response;
+  }
+}
