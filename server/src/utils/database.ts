@@ -4,7 +4,7 @@ declare global {
   var mongoose: any;
 }
 
-const URI =
+const URI: string =
   'mongodb+srv://admin:6FOoAD26AEOLkQnB@cluster0.lqlmuvw.mongodb.net/?retryWrites=true&w=majority&appName=AtlasApp';
 
 const databaseConnection = async () => {

@@ -6,6 +6,6 @@ export default class UsersController {
 
   getData = async (req: Request, res: Response) => {
     const response = await this.userService.getData();
-    return res.status(201).json(response);
+    return res.status(200).json(response);
   };
 }

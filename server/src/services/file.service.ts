@@ -7,8 +7,8 @@ export default class FilesService {
 
   public async postData(file: InterfaceData) {
     await databaseConnection();
-    console.log(file);
+    const createdData = await File.create(file);
 
-    // return data;
+    return createdData;
   }
 }
