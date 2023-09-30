@@ -1,0 +1,25 @@
+{
+  "name": "test-junior-fullstack",
+  "version": "1.0.0",
+  "description": "You will be required to build a web application that allows users to load a CSV file with preformatted data and display the data as cards on the website. The application should also include a search bar that allows users to search for data within the loaded CSV file.",
+  "main": "index.js",
+  "scripts": {
+    "install": "concurrently \"cd client && npm install\" \"cd server && npm install\"",
+    "start": "concurrently \"react-scripts start\" \"cd backend && nodemon server\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matt-pessoa/test-junior-fullstack.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matt-pessoa/test-junior-fullstack/issues"
+  },
+  "homepage": "https://github.com/matt-pessoa/test-junior-fullstack#readme",
+  "devDependencies": {
+    "concurrently": "^8.2.1"
+  }
+}
