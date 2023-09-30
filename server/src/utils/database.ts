@@ -1,17 +1,9 @@
-import mongoose from 'mongoose';
+import sqlite3 from 'sqlite3';
+import { open } from 'sqlite';
 
-declare global {
-  var mongoose: any;
+export default async function databaseConnection() {
+  return open({
+    filename: './database.db',
+    driver: sqlite3.Database,
+  });
 }
-
-const URI: string =
-  'mongodb+srv://admin:6FOoAD26AEOLkQnB@cluster0.lqlmuvw.mongodb.net/?retryWrites=true&w=majority&appName=AtlasApp';
-
-const databaseConnection = async () => {
-  if (!global.mongoose) {
-    mongoose.set('strictQuery', false);
-    global.mongoose = await mongoose.connect(URI);
-  }
-};
-
-export default databaseConnection;
