@@ -4,7 +4,7 @@ import { InterfaceData } from '../interfaces/dataInterface';
 export default class FilesService {
   constructor() {}
 
-  public async postData(file: InterfaceData) {
+  public async postData(file: InterfaceData | any) {
     const createdData = await File.create(file);
 
     return createdData;
