@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "install": "concurrently \"cd client && npm install\" \"cd server && npm install\"",
-    "start": "concurrently \"react-scripts start\" \"cd backend && nodemon server\"",
+    "dev": "concurrently \"cd client && npm start\" \"cd server && npm run nodemon\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
