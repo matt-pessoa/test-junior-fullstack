@@ -1,8 +1,10 @@
 import { Router } from 'express';
+import FilesController from '../controllers/file.controller';
 
 const router = Router();
-// const { fileController } = require('../controllers');
 
-// router.post('/', fileController.postFile);
+const fileController = new FilesController();
 
-export default router;
+router.post('/', fileController.postData);
+
+module.exports = router;
