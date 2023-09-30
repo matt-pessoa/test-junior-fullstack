@@ -5,7 +5,7 @@ const usersRoute = require('./routes/users.routes');
 const filesRoute = require('./routes/files.routes');
 const defaultRoute = '/api';
 
-sequelize.sync().then(() => {
+sequelize.sync({ force: true }).then(() => {
   console.log('DB is ready');
 });
 

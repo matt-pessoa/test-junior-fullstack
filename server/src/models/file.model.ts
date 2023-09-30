@@ -21,6 +21,7 @@ File.init(
   {
     sequelize,
     modelName: 'file',
+    timestamps: false,
   }
 );
 
