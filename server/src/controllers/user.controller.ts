@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import UsersService from '../services/user.service';
+import { dataValidation } from '../middlewares/userValidation';
 
 export default class UsersController {
   constructor(private userService = new UsersService()) {}
@@ -18,7 +19,11 @@ export default class UsersController {
   getQueryData = async (req: Request, res: Response) => {
     const query = req.query.q;
 
-    const response = await this.userService.getQueryData(query);
-    return res.status(200).json(response);
+    if (await dataValidation()) {
+      const response = await this.userService.getQueryData(query);
+      return res.status(200).json(response);
+    } else {
+      return res.status(404).json({ message: 'Data not found.' });
+    }
   };
 }
