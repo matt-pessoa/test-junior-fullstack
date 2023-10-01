@@ -5,7 +5,7 @@ export default class FilesService {
   constructor() {}
 
   public async postData(file: InterfaceData | any) {
-    const createdData = await File.create(file);
+    const createdData = await File.bulkCreate(file);
 
     return createdData;
   }
