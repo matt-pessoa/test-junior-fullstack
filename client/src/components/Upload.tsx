@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import View from './View';
 
 function Upload() {
   const [file, setFile] = useState();
+  const [fetchDataSwitch, setFetchDataSwitch] = useState(false);
 
   const uploadFile = async (file: any) => {
     const formData = new FormData();
@@ -11,7 +13,7 @@ function Upload() {
     axios
       .post('http://localhost:3000/api/files', formData)
       .then((res) => {
-        console.log(res);
+        setFetchDataSwitch(true);
       })
       .catch((err) => console.error(err));
   };
@@ -47,6 +49,8 @@ function Upload() {
           IMPORT CSV
         </button>
       </form>
+
+      <View fetchDataSwitch={fetchDataSwitch} />
     </div>
   );
 }

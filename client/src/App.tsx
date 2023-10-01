@@ -3,7 +3,7 @@ import Upload from './components/Upload';
 
 function App() {
   return (
-    <div className="App">
+    <div className='App'>
       <Header />
       <Upload />
     </div>
