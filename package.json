@@ -6,7 +6,7 @@
   "scripts": {
     "install": "concurrently \"cd client && npm install\" \"cd server && npm install\"",
     "dev": "concurrently \"cd client && npm start\" \"cd server && npm run nodemon\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cd client && npm test"
   },
   "repository": {
     "type": "git",
