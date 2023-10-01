@@ -53,13 +53,15 @@ function View(props: ViewProps) {
   };
 
   return (
-    <div>
-      <form>
+    <div className='data-display'>
+      <form className='search-form'>
         <input
           id='message'
           name='message'
           onChange={handleChange}
           value={message}
+          className='search-box'
+          disabled={data.length === 0}
         />
 
         <button
@@ -67,6 +69,7 @@ function View(props: ViewProps) {
           onClick={(e) => {
             handleOnSubmit(e);
           }}
+          className='search-btn'
         >
           SEARCH
         </button>

@@ -31,26 +31,43 @@ function Upload() {
   };
 
   return (
-    <div style={{ textAlign: 'center' }}>
-      <h1>REACTJS CSV IMPORT EXAMPLE </h1>
-      <form>
-        <input
-          type={'file'}
-          id={'csvFileInput'}
-          accept={'.csv'}
-          onChange={handleOnChange}
-        />
+    <div className='wrapper'>
+      <section className='main' style={{ textAlign: 'center' }}>
+        <div className='landing-text'>
+          <h1>Seamless CSV Import</h1>
+          <p>
+            Say goodbye to the hassle of manual data entry. Our CSV import
+            feature allows you to effortlessly upload your data with just a few
+            clicks. Simply import your CSV file, and we'll take care of the
+            rest.
+          </p>
+        </div>
+        <form className='submit-file-form'>
+          <input
+            type={'file'}
+            id={'csvFileInput'}
+            accept={'.csv'}
+            onChange={handleOnChange}
+            hidden
+          />
+          <label className='csv-label' htmlFor='csvFileInput'>
+            Choose File
+          </label>
 
-        <button
-          onClick={(e) => {
-            handleOnSubmit(e);
-          }}
-        >
-          IMPORT CSV
-        </button>
-      </form>
+          <button
+            className='import-btn'
+            onClick={(e) => {
+              handleOnSubmit(e);
+            }}
+          >
+            Import CSV
+          </button>
+        </form>
+      </section>
 
-      <View fetchDataSwitch={fetchDataSwitch} />
+      <section className='aside'>
+        <View fetchDataSwitch={fetchDataSwitch} />
+      </section>
     </div>
   );
 }

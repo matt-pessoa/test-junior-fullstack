@@ -11,3 +11,244 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.main {
+  background-color: #726dfd;
+  padding: 20px;
+  color: white;
+  border-radius: 0 0 27px 27px;
+
+  > form {
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+}
+
+.csv-label {
+  background-color: white;
+  color: #726dfd;
+  padding: 0.5rem;
+  font-family: sans-serif;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  font-weight: 700;
+  border: none;
+  font-size: 1em;
+}
+
+.import-btn {
+  background-color: white;
+  color: #726dfd;
+  padding: 0.5rem;
+  font-family: sans-serif;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  font-weight: 700;
+  border: none;
+  font-size: 1em;
+}
+
+.data-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+#cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: #ceec31;
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 27px;
+  /* max-width: 30vw; */
+
+  > h1 {
+    font-size: 1.5em;
+    margin: 5px 0;
+  }
+  > h2 {
+    font-size: 1em;
+    margin: 0;
+  }
+  > p {
+    margin: 15px 0;
+  }
+}
+
+.search-btn:disabled {
+  background: rgb(176, 176, 176) !important;
+}
+
+.search-btn {
+  background: black;
+  color: white;
+  font-weight: 700;
+  padding: 12px;
+  outline: none;
+  border: none;
+  border-radius: 0 10px 10px 0;
+}
+
+.search-box {
+  padding: 11px;
+  border-radius: 10px 0 0 10px;
+  outline: none;
+}
+
+@media screen and (max-width: 480px) and (min-width: 320px) {
+  .wrapper {
+    display: block;
+  }
+
+  #cards {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+
+  .card {
+    width: 70vw;
+  }
+
+  .landing-text {
+    > h1 {
+      font-size: 2.2em;
+      margin: 20px;
+      text-align: left;
+    }
+    > p {
+      text-align: right;
+      padding: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 830px) and (min-width: 481px) {
+  .wrapper {
+    display: block;
+  }
+
+  #cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100vw;
+  }
+
+  .card {
+    margin: 15px 15px;
+    width: 40vw;
+  }
+
+  .landing-text {
+    > h1 {
+      font-size: 4em;
+      margin: 30px;
+      text-align: left;
+    }
+    > p {
+      font-size: 1.2em;
+      text-align: right;
+      padding: 30px 30px 0 30px;
+    }
+  }
+
+  .submit-file-form {
+    display: flex;
+    justify-content: flex-end !important;
+    gap: 20px;
+    padding: 10px 30px;
+  }
+}
+
+@media screen and (min-width: 830px) {
+  .wrapper {
+    display: flex;
+  }
+
+  .main {
+    width: 50vw;
+    height: 100vh;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    border-radius: 0 27px 27px 0;
+  }
+
+  .landing-text {
+    padding: 20px 70px;
+    text-align: left;
+
+    > h1 {
+      font-size: 4em;
+    }
+    > p {
+      font-size: 1.5em;
+    }
+  }
+
+  .csv-label {
+    font-size: 1.2em;
+    padding: 15px;
+  }
+
+  .import-btn {
+    font-size: 1.2em;
+    padding: 15px;
+  }
+
+  .submit-file-form {
+    padding: 0 0 50px 70px;
+    margin-right: auto;
+  }
+
+  .aside {
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+  }
+
+  .search-form {
+    display: flex;
+    width: 50vw;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #message {
+    width: 70%;
+  }
+
+  .data-display {
+    height: 95vh;
+  }
+
+  #cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow: auto;
+    height: 85vh;
+  }
+
+  .search-form {
+    height: 5vh;
+  }
+
+  .card {
+    width: 15vw;
+    height: 20vh;
+    margin: 15px 15px;
+  }
+}
