@@ -1,22 +1,30 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
 function Upload() {
   const [file, setFile] = useState();
 
-  const fileReader = new FileReader();
+  const uploadFile = async (file: any) => {
+    const formData = new FormData();
+    formData.append('file', file);
+
+    axios
+      .post('http://localhost:3000/api/files', formData)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => console.error(err));
+  };
 
   const handleOnChange = (e: any) => {
     setFile(e.target.files[0]);
   };
 
-  const handleOnSubmit = (e: any) => {
+  const handleOnSubmit = async (e: any) => {
     e.preventDefault();
 
     if (file) {
-      fileReader.onload = function (event) {
-        const csvOutput = event.target!.result;
-        console.log(csvOutput);
-      };
+      await uploadFile(file);
     }
   };
 
