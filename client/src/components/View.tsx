@@ -27,7 +27,6 @@ function View(props: ViewProps) {
       await axios
         .get(`http://localhost:3000/api/users/?q=${query}`)
         .then((res) => {
-          console.log('FETCH COM QUERY', res.data);
           setData(res.data);
         })
         .catch((err) => console.error(err));
@@ -35,7 +34,6 @@ function View(props: ViewProps) {
       await axios
         .get('http://localhost:3000/api/users')
         .then((res) => {
-          console.log('FETCH SEM QUERY', res.data);
           setData(res.data);
         })
         .catch((err) => console.error(err));

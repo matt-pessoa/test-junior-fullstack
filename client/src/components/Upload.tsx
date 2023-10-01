@@ -34,8 +34,8 @@ function Upload() {
     <div className='wrapper'>
       <section className='main' style={{ textAlign: 'center' }}>
         <div className='landing-text'>
-          <h1>Seamless CSV Import</h1>
-          <p>
+          <h1 data-testid='u-1'>Seamless CSV Import</h1>
+          <p data-testid='u-2'>
             Say goodbye to the hassle of manual data entry. Our CSV import
             feature allows you to effortlessly upload your data with just a few
             clicks. Simply import your CSV file, and we'll take care of the
@@ -50,11 +50,12 @@ function Upload() {
             onChange={handleOnChange}
             hidden
           />
-          <label className='csv-label' htmlFor='csvFileInput'>
+          <label data-testid='u-3' className='csv-label' htmlFor='csvFileInput'>
             Choose File
           </label>
 
           <button
+            data-testid='u-4'
             className='import-btn'
             onClick={(e) => {
               handleOnSubmit(e);
