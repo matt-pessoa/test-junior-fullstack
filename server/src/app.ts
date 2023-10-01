@@ -1,5 +1,12 @@
 import express from 'express';
 import sequelize from './utils/database';
+import cors from 'cors';
+
+const corsOptions = {
+  origin: '*',
+  credentials: true,
+  optionSuccessStatus: 200,
+};
 
 const usersRoute = require('./routes/users.routes');
 const filesRoute = require('./routes/files.routes');
@@ -11,6 +18,7 @@ sequelize.sync({ force: true }).then(() => {
 
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 
 app.use(`${defaultRoute}/users`, usersRoute);
