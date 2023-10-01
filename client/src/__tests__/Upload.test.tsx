@@ -1,9 +1,7 @@
 import React from 'react';
-import { render, fireEvent, waitFor, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
-// Import your component
 import Upload from '../components/Upload';
 
 describe('Upload component', () => {
